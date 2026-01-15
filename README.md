@@ -2,7 +2,9 @@
 
 [OpenCode] plugin for [Perplexity] AI web search integration.
 
-This plugin automatically detects when you're asking for web searches or research and nudges the OpenCode agent to use the [Perplexity MCP server][perplexity-mcp].
+This plugin automatically detects when you're asking for web searches or
+research and nudges the OpenCode agent to use the [Perplexity MCP
+server][perplexity-mcp].
 
 ## Features
 
@@ -14,7 +16,8 @@ This plugin automatically detects when you're asking for web searches or researc
 ## Prerequisites
 
 1. **Perplexity API Key**: Get one from [Perplexity Settings][perplexity-api]
-2. **[perplexity-mcp]**: The MCP server that provides the actual search functionality
+2. **[perplexity-mcp]**: The MCP server that provides the actual search
+   functionality
 
 ## Installation
 
@@ -25,6 +28,7 @@ bunx perplexity-opencode@latest install
 ```
 
 This will:
+
 1. Prompt for your Perplexity API key
 2. Create `~/.config/opencode/perplexity.json` with your config
 3. Add the plugin to `~/.config/opencode/opencode.json`
@@ -40,11 +44,13 @@ bunx perplexity-opencode@latest install --no-tui --api-key pplx-xxx
 ### Manual Installation
 
 1. Install the MCP server:
+
    ```bash
    uv tool install perplexity-mcp
    ```
 
 2. Add to `~/.config/opencode/opencode.json`:
+
    ```json
    {
      "plugin": ["perplexity-opencode@latest"],
@@ -62,6 +68,7 @@ bunx perplexity-opencode@latest install --no-tui --api-key pplx-xxx
    ```
 
 3. Create `~/.config/opencode/perplexity.json`:
+
    ```json
    {
      "apiKey": "pplx-xxx",
@@ -82,9 +89,7 @@ bunx perplexity-opencode@latest install --no-tui --api-key pplx-xxx
   "apiKey": "pplx-xxx",
   "keywords": {
     "enabled": true,
-    "customPatterns": [
-      "\\bmy-custom-trigger\\b"
-    ]
+    "customPatterns": ["\\bmy-custom-trigger\\b"]
   }
 }
 ```
@@ -99,6 +104,7 @@ bunx perplexity-opencode@latest install --no-tui --api-key pplx-xxx
 The plugin activates when it detects phrases like:
 
 **Search triggers:**
+
 - "search the web", "look up", "find information"
 - "what is the latest", "recent news", "current events"
 - "who is", "when did", "where is", "how much"
@@ -106,16 +112,20 @@ The plugin activates when it detects phrases like:
 - "perplexity", "ask perplexity"
 
 **Research triggers (for deeper analysis):**
+
 - "deep dive", "comprehensive research"
 - "thorough investigation", "in-depth analysis"
 - "detailed research", "detailed report"
 
 ## How It Works
 
-1. **Message interception**: The plugin hooks into OpenCode's `chat.message` event
+1. **Message interception**: The plugin hooks into OpenCode's `chat.message`
+   event
 2. **Keyword detection**: Scans your message for search-related patterns
-3. **Nudge injection**: Adds a synthetic hint message guiding the agent to use Perplexity
-4. **Agent action**: The OpenCode agent sees the hint and uses the `perplexity_search_web` tool
+3. **Nudge injection**: Adds a synthetic hint message guiding the agent to use
+   Perplexity
+4. **Agent action**: The OpenCode agent sees the hint and uses the
+   `perplexity_search_web` tool
 
 ## Development
 
