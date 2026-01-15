@@ -356,10 +356,21 @@ async function install(options: InstallOptions): Promise<number> {
 
   // Step 5: Install perplexity-mcp
   console.log("\nStep 5: Install Perplexity MCP Server");
-  console.log("  Run the following command to install the MCP server:");
-  console.log("    uv tool install perplexity-mcp");
-  console.log("  Or add to your project:");
-  console.log("    uv add perplexity-mcp");
+  console.log("  The plugin requires the perplexity-mcp server for actual web search.");
+  console.log("  Installation options:");
+  console.log("");
+  console.log("  1. Install globally (recommended):");
+  console.log("     uv tool install perplexity-mcp");
+  console.log("");
+  console.log("  2. Add to your project:");
+  console.log("     uv add perplexity-mcp");
+  console.log("");
+  console.log("  Prerequisite: uv must be installed");
+  console.log("     curl -LsSf https://astral.sh/uv/install.sh | sh");
+  console.log("     or: brew install uv");
+  console.log("");
+  console.log("  For more installation methods, see:");
+  console.log("  https://github.com/kevinmichaelchen/perplexity-mcp#installation");
 
   // Summary
   console.log("\n" + "-".repeat(50));
@@ -371,8 +382,13 @@ async function install(options: InstallOptions): Promise<number> {
     console.log("2. Set the environment variable:");
     console.log('   export PERPLEXITY_API_KEY="pplx-..."');
     console.log("   Or edit ~/.config/opencode/perplexity.json");
+    console.log("3. Install the MCP server (see Step 5 above)");
   } else {
-    console.log("Perplexity is configured and ready to use!");
+    console.log("Perplexity plugin is configured!");
+    console.log("");
+    console.log("IMPORTANT: The plugin requires the MCP server to function.");
+    console.log("Install it using one of the commands shown in Step 5 above.");
+    console.log("Without it, the plugin will be registered but won't work.");
   }
 
   console.log("\nKeyword triggers enabled:");
