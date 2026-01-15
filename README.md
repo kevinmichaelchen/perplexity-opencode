@@ -1,8 +1,8 @@
 # perplexity-opencode
 
-OpenCode plugin for Perplexity AI web search integration.
+[OpenCode] plugin for [Perplexity] AI web search integration.
 
-This plugin automatically detects when you're asking for web searches or research and nudges the OpenCode agent to use the Perplexity MCP server.
+This plugin automatically detects when you're asking for web searches or research and nudges the OpenCode agent to use the [Perplexity MCP server][perplexity-mcp].
 
 ## Features
 
@@ -13,8 +13,8 @@ This plugin automatically detects when you're asking for web searches or researc
 
 ## Prerequisites
 
-1. **Perplexity API Key**: Get one from [Perplexity Settings](https://www.perplexity.ai/settings/api)
-2. **perplexity-mcp**: The MCP server that provides the actual search functionality
+1. **Perplexity API Key**: Get one from [Perplexity Settings][perplexity-api]
+2. **[perplexity-mcp]**: The MCP server that provides the actual search functionality
 
 ## Installation
 
@@ -133,6 +133,15 @@ bun run typecheck
 bun run clean
 ```
 
+## Related
+
+- [perplexity-mcp] - The MCP server this plugin integrates with
+
 ## License
 
 MIT
+
+[OpenCode]: https://opencode.ai/
+[Perplexity]: https://www.perplexity.ai/
+[perplexity-api]: https://www.perplexity.ai/settings/api
+[perplexity-mcp]: https://github.com/kevinmichaelchen/perplexity-mcp
