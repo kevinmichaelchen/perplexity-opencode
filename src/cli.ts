@@ -186,12 +186,11 @@ function addMcpServerToConfig(configPath: string, apiKey: string): boolean {
       return true;
     }
 
-    // Perplexity uses stdio transport with uv
+    // Perplexity uses local transport with uv
     mcp.perplexity = {
-      type: "stdio",
-      command: "uv",
-      args: ["run", "perplexity-mcp"],
-      env: {
+      type: "local",
+      command: ["uv", "tool", "run", "perplexity-mcp"],
+      environment: {
         PERPLEXITY_API_KEY: apiKey,
       },
     };
@@ -215,10 +214,9 @@ function createNewConfig(apiKey: string): boolean {
     plugin: [PLUGIN_NAME],
     mcp: {
       perplexity: {
-        type: "stdio",
-        command: "uv",
-        args: ["run", "perplexity-mcp"],
-        env: {
+        type: "local",
+        command: ["uv", "tool", "run", "perplexity-mcp"],
+        environment: {
           PERPLEXITY_API_KEY: apiKey,
         },
       },

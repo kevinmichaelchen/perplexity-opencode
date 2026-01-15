@@ -56,10 +56,9 @@ bunx perplexity-opencode@latest install --no-tui --api-key pplx-xxx
      "plugin": ["perplexity-opencode@latest"],
      "mcp": {
        "perplexity": {
-         "type": "stdio",
-         "command": "uv",
-         "args": ["run", "perplexity-mcp"],
-         "env": {
+         "type": "local",
+         "command": ["uv", "tool", "run", "perplexity-mcp"],
+         "environment": {
            "PERPLEXITY_API_KEY": "pplx-xxx"
          }
        }
